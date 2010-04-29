@@ -23,6 +23,6 @@ Feature: Making a shelf from several pieces
   
   Scenario: Making a shelf from many pieces in the inventory
     Given pieces in the inventory that measure "40, 10, 25, 12, 13"
-    When I make a shelf that measures "62"
-    Then I should have pieces that measure "40, 13, 9"
-    And I should have pieces left in the inventory that measure "25, 10, 3"
+    When I make a shelf that measures "68"
+    Then I should have pieces that measure "40, 25, 3"
+    And I should have pieces left in the inventory that measure "12, 10, 10"
