@@ -4,21 +4,22 @@ end
 
 Given /^(?:a piece|pieces) in the inventory that measures? "([^\"]*)"$/ do |csv|
   pieces = get_pieces_from csv
-  pending # express the regexp above with the code you wish you had
+  @carpenter = Carpenter.new
+  @carpenter.pieces = pieces
 end
 
 When /^I make a shelf that measures "([^\"]*)"$/ do |length|
-  pending # express the regexp above with the code you wish you had
+  @shelf_pieces = @carpenter.make length
 end
 
 Then /^I should have (?:a piece|pieces) that measures? "([^\"]*)"$/ do |csv|
   pieces = get_pieces_from csv
-  pending # express the regexp above with the code you wish you had
+  @shelf_pieces.should == pieces
 end
 
 Then /^I should have (?:a piece|pieces) left in the inventory that measures? "([^\"]*)"$/ do |csv|
   pieces = get_pieces_from csv
-  pending # express the regexp above with the code you wish you had
+  @carpenter.pieces.should == pieces
 end
 
 Then /^I should have no pieces left in the inventory$/ do
