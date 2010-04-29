@@ -9,7 +9,7 @@ Given /^(?:a piece|pieces) in the inventory that measures? "([^\"]*)"$/ do |csv|
 end
 
 When /^I make a shelf that measures "([^\"]*)"$/ do |length|
-  @shelf_pieces = @carpenter.make length
+  @shelf_pieces = @carpenter.make_shelf length
 end
 
 Then /^I should have (?:a piece|pieces) that measures? "([^\"]*)"$/ do |csv|
